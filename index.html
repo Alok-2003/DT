@@ -9,17 +9,95 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- <iframe src="DT-3.pdf" frameborder="0"></iframe> -->
-    <embed src="DT-1   Introduction to open source IOT platform.pdf" type="application/pdf" width="90%" height="700px" >
-    <embed src="DT-2    Design a cloud based weather monitoring.pdf" type="application/pdf" width="90%" height="700px">
-    <embed src="DT-3    Develop a smart phone application for smart home voice-assistant..pdf" type="application/pdf" width="90%" height="700px">
-    <embed src="DT-4    Understanding different AR effects along with exploration of AR tool interface and capabilities..pdf" type="application/pdf" width="90%" height="700px">
-    <embed src="DT-5   Develop an AR layer for modulating objects in congruence with dynamic  text.pdf" type="application/pdf" width="90%" height="700px">
-    <embed src="DT-6   To develop facebok and instagram filter using spark ar.pdf" type="application/pdf" width="90%" height="700px">
-    <embed src="DT-7   Understanding robotics developmentplatform environment to model,.pdf" type="application/pdf" width="90%" height="700px">
-    <embed src="DT-8   Understanding robotics development platform environment to model. program and simulate robots..pdf" type="application/pdf" width="90%" height="700px">
-    <embed src="Designing_Robot_using_CopelliaSim_Part_1.pdf" type="application/pdf" width="90%" height="700px">
-    <embed src="Designing_Robot_using_CopelliaSim_Part_2.pdf" type="application/pdf" width="90%" height="700px">
-    <embed src="Designing_Robot_using_CopelliaSim_Part_3.pdf" type="application/pdf" width="90%" height="700px">
+    <h1>Linear Search</h1>
+    int LA[]={2,6,7,9,3};
+    int size = sizeof(LA)/sizeof(int);
+    int element;
+        cout<<"\nEnter the element you want to search:\n";
+        cin>>element;
+        int c;
+        for (int i = 0; i < size; i++)
+        {
+            if (LA[i]==element)
+            {
+                c=1;
+            }
+        }
+        if(c==1){
+        cout<<"Element "<<element<<" is found ";
+        }
+        else
+        {
+        cout<<"Element "<<element<<" is not found";
+        }
+        return 0;
+    <h1>Binary Search</h1>
+    
+    using namespace std;
+
+int binarySearch(int arr[], int l, int r, int x)
+{
+	while (l <= r) {
+		int m = l + (r - l) / 2;
+
+		if (arr[m] == x)
+			return m;
+
+		if (arr[m] < x)
+			l = m + 1;
+
+		else
+			r = m - 1;
+	}
+	return -1;
+}
+int main(void)
+{
+	int arr[] = { 2, 3, 4, 10, 40 };
+	int x = 10;
+	int n = sizeof(arr) / sizeof(arr[0]);
+	int result = binarySearch(arr, 0, n - 1, x);
+	(result == -1)
+		? cout << "Element is not present in array"
+		: cout << "Element is present at index " << result;
+	return 0;
+}
+<h1>Insertion Sort</h1>
+for (int i=1; i<n; i++){
+    int current= arr[i];
+    int j=i-1;
+    while (arr[j]>current && j>=0)
+    {
+        arr[j+1]=arr[j];
+        j--;
+
+    }
+    arr[j+1]=current;  
+}
+<h1>Bubble Sort</h1>
+int counter=1;
+    while(counter<n){
+        for (int i = 0; i < n-counter; i++){
+            if (arr[i]>arr[i+1]){
+                int temp =arr[i];
+                arr[i]=arr[i+1];
+                arr[i+1]=temp;
+            }
+            
+        }
+        counter++;
+    }
+<h1>Selection Sort</h1>
+for (int i = 0; i < n-1; i++){
+    for (int j = i+1; j < n; j++)
+    {
+        if(arr[j]<arr[i]){
+            int temp=arr[j];
+            arr[j]=arr[i];
+            arr[i]=temp;
+        }
+    }      
+}
+    
 </body>
 </html>
